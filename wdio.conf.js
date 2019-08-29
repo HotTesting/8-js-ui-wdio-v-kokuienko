@@ -1,3 +1,6 @@
+const BASE_URL = process.env.BASE_URL || 'http://ip-5236.sunline.net.ua:38015/'
+console.log('GOT BASE URL', BASE_URL)
+
 exports.config = {
     //
     // ====================
@@ -21,7 +24,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/2.js'
+        './test/specs/registration.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -92,7 +95,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://ip-5236.sunline.net.ua:38015/',
+    baseUrl: BASE_URL,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -163,8 +166,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function(capabilities, specs) {
+        browser.setWindowSize(1920, 1080);
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
