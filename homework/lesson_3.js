@@ -4,8 +4,6 @@
  - browser.pause() allowed
  - copy/paste is allowed
  - prefer css selectors
- - Use mocha before/after hooks to reuse pre/post conditions
- - Use ChaiJS to make assertions
  */
 
 // Each implemented test gives you 15 points (max total - 45)
