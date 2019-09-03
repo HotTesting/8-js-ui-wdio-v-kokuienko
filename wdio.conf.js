@@ -1,3 +1,5 @@
+require('ts-node').register({ files: true });
+
 const BASE_URL = process.env.BASE_URL || 'http://ip-5236.sunline.net.ua:38015/'
 console.log('GOT BASE URL', BASE_URL)
 
