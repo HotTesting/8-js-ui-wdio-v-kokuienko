@@ -1,4 +1,4 @@
-const assert = require('assert');
+import * as assert from 'assert';
 
 describe('Website', function () {
     it('should be alive', function () {
