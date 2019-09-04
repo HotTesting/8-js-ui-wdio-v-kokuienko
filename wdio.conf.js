@@ -3,6 +3,8 @@ require('ts-node').register({ files: true });
 const BASE_URL = process.env.BASE_URL || 'http://ip-5236.sunline.net.ua:38015/'
 console.log('GOT BASE URL', BASE_URL)
 
+const GREP_VAR = 'C1232'
+
 exports.config = {
     //
     // ====================
@@ -26,7 +28,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/registration.js'
+        './test/specs/mocha_features.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -136,7 +138,9 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 60000,
+        // retries: 5
+        // grep: '@SMOKE'
     },
     //
     // =====
