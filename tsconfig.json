@@ -6,7 +6,8 @@
             "node", 
             "@wdio/sync", 
             "@wdio/mocha-framework"
-        ]
+        ],
+        "target": "es2018"
     }
     
 }
