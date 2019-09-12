@@ -12,7 +12,7 @@ export class Checkout {
 
     open() {
         browser.url('/checkout')
-        browser.pause(5000)
+        $('.loader-wrapper .loader').waitForDisplayed(null, true, `Expected loader to disappear`)
     }
 
     isNoItemsInCart() {

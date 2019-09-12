@@ -1,15 +1,25 @@
 describe("Registration @ALL", function () {
   this.retries(3); 
 
-  it("should be successful", function() {
-    this.timeout(340000);
-    this.retries(2);
-    this.slow(10000);
+  let isFailed = false
 
-    console.log("DONE: should be successful");
+  it("should be successful", function() {
+    try {
+      this.timeout(340000);
+      this.retries(2);
+      this.slow(10000);
+  
+      console.log("DONE: should be successful");
+    } catch (err) {
+      isFailed = true
+      throw err
+    } 
   });
 
   it("can be done via Facebook", function() {
+    if (isFailed) {
+      throw new Error('')
+    }
     console.log("DONE: can be done via Facebook");
   });
 
