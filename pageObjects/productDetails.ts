@@ -13,12 +13,12 @@ export class ProductDetails {
     }
 
     addToCart() {
-        const currentItemsInCart = this.header.headerCart.getQuantity()
+        const currentItemsInCart = this.header.getQuantity()
         $('button[name="add_cart_product"]').click()
         browser.waitUntil(() => {
-            return this.header.headerCart.getQuantity() > currentItemsInCart
+            return this.header.getQuantity() > currentItemsInCart
         }, null, `Expected items in cart to be changed. 
-        Current items: ${this.header.headerCart.getQuantity()} items before ${currentItemsInCart}`)
+        Current items: ${this.header.getQuantity()} items before ${currentItemsInCart}`)
     }
 
     public getProductPrice() {

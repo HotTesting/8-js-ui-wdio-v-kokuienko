@@ -1,4 +1,4 @@
-export class Header {
+export class HeaderOld {
     headerCart:HeaderCart
 
     get container() {
@@ -6,7 +6,7 @@ export class Header {
     }
 
     constructor() {
-        this.headerCart = new HeaderCart(this.container)
+        this.headerCart = new HeaderCart(() => this.container)
     } 
 }
 
@@ -14,7 +14,7 @@ class HeaderCart {
     header
 
     get container() {
-        return this.header.$('#cart')
+        return this.header().$('#cart')
     }
 
     constructor(header) {
@@ -23,6 +23,17 @@ class HeaderCart {
 
     getQuantity(): number {
         let quantity = this.container.$('.quantity').getText()
+        return parseInt(quantity)
+    }
+}
+
+export class Header {
+    get container() {
+        return $('#header')
+    }
+    
+    getQuantity(): number {
+        let quantity = this.container.$('#cart .quantity').getText()
         return parseInt(quantity)
     }
 }
