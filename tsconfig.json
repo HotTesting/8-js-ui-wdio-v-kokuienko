@@ -5,9 +5,9 @@
         "types": [
             "node", 
             "@wdio/sync", 
-            "@wdio/mocha-framework"
+            "@wdio/mocha-framework",
+            "./index.d.ts"
         ],
         "target": "es2018"
     }
-    
 }

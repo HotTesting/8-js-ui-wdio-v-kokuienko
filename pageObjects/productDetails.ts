@@ -1,13 +1,9 @@
-import { Header } from './components/header';
-import { Footer } from './components/footer';
 import { ProductDetailsModel } from '../dataModels/ProductDetails';
+import { BasePage } from './base';
 // for example: http://ip-5236.sunline.net.ua:38015/rubber-ducks-c-1/blue-duck-p-4
 
 
-export class ProductDetails {
-    header = new Header();
-    footer = new Footer();
-
+export class ProductDetails extends BasePage {
     open(productPath) {
         browser.url(productPath)
     }

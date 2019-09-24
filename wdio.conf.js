@@ -1,9 +1,8 @@
-require('ts-node').register({ files: true });
+require("ts-node").register({ files: true });
 
-const BASE_URL = process.env.BASE_URL || 'http://ip-5236.sunline.net.ua:38015/'
-console.log('GOT BASE URL', BASE_URL)
+const BASE_URL = process.env.BASE_URL || "http://ip-5236.sunline.net.ua:38015/";
+console.log("GOT BASE URL", BASE_URL);
 
-const GREP_VAR = 'C1232'
 
 exports.config = {
     //
@@ -13,11 +12,11 @@ exports.config = {
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
-    runner: 'local',
+    runner: "local",
     // Where selenium standalone or chrome driver started
     // hostname: 'localhost',
     // port: 4444,
-    path: '/',
+    path: "/",
     //
     // ==================
     // Specify Test Files
@@ -28,7 +27,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/cart.ts'
+        "./test/specs/multiremote.js"
+        // './test/specs/registration.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,19 +55,33 @@ exports.config = {
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
-    //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    }],
+
+    // capabilities: [{
+    //     // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+    //     // grid with only 5 firefox instances available you can make sure that not more than
+    //     // 5 instances get started at a time.
+    //     maxInstances: 5,
+    //     //
+    //     browserName: 'chrome',
+    //     // If outputDir is provided WebdriverIO can capture driver session logs
+    //     // it is possible to configure which logTypes to include/exclude.
+    //     // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+    //     // excludeDriverLogs: ['bugreport', 'server'],
+    // }],
+
+    capabilities: {
+        user1: {
+            capabilities: {
+                browserName: "chrome"
+            }
+        },
+        user2: {
+            capabilities: {
+                browserName: "firefox"
+            }
+        }
+    },
+
     //
     // ===================
     // Test Configurations
@@ -75,7 +89,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: "info",
     //
     // Set specific log levels per logger
     // loggers:
@@ -115,15 +129,15 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
-    
+    services: ["chromedriver"],
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: "mocha",
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -131,14 +145,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
-    
+    reporters: ["spec"],
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000,
+        ui: "bdd",
+        timeout: 60000
         // retries: 5
         // grep: '@SMOKE'
     },
@@ -174,7 +188,7 @@ exports.config = {
      */
     before: function(capabilities, specs) {
         browser.setWindowSize(1920, 1080);
-    },
+    }
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -255,10 +269,10 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
-}
+};
