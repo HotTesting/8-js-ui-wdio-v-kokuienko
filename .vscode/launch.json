@@ -12,8 +12,8 @@
         "sourceMaps": true,
         "args": [
           "./wdio.conf.js", 
-          "--spec", 
-          "./tests/lesson_6/po.ts"
+           "--spec", 
+           "./test/specs/cart.ts"
         ],
         "env": {
           "DEBUG": "1",

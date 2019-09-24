@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="652a9c38-938e-4d63-a2db-082bdd889aac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageObjects/checkout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/checkout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/specs/cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/specs/cart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/specs/executeScript.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test/specs/executeScript.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/createUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/createUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wdio.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/wdio.conf.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1RI1EwY2NV5c8WiLwCEgZhw772W" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Node.js/Chrome.ATTACH">
+    <configuration name="ATTACH" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="5858" restartOnDisconnect="true">
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="WDIO" run_configuration_type="NodeJSConfigurationType" />
+      </method>
+    </configuration>
+    <configuration name="WDIO" type="NodeJSConfigurationType" application-parameters="./wdio.conf.js --spec ./test/specs/cart.ts" path-to-js-file="./node_modules/.bin/wdio" working-dir="$PROJECT_DIR$">
+      <envs>
+        <env name="DEBUG" value="1" />
+        <env name="SUT_URL" value="http://ip-5236.sunline.net.ua:38015" />
+      </envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Attach to Node.js/Chrome.ATTACH" />
+      <item itemvalue="Node.js.WDIO" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="652a9c38-938e-4d63-a2db-082bdd889aac" name="Default Changelist" comment="" />
+      <created>1569339687949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569339687949</updated>
+      <workItem from="1569339689048" duration="1826000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/specs/cart.ts</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/specs/cart.ts</url>
+          <line>8</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

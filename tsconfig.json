@@ -2,12 +2,13 @@
     "compilerOptions": {
         "outDir": "./build",
         "allowJs": true,
+        "inlineSourceMap": true,
         "types": [
             "node", 
             "@wdio/sync", 
-            "@wdio/mocha-framework",
-            "./index.d.ts"
+            "@wdio/mocha-framework"
         ],
-        "target": "es2018"
+        "module": "commonjs",
+        "target": "es6"
     }
 }

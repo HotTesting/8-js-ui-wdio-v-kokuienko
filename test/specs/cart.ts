@@ -6,7 +6,6 @@ describe('Cart', function () {
     it('can add item', function () {        
         App.product.open('/rubber-ducks-c-1/red-duck-p-3')
         App.product.addToCart()
-
         App.checkout.open()
         expect(App.checkout.isItemsInCart()).to.be.true
     })

@@ -31,14 +31,18 @@ export class Checkout {
 
 // Component
 class ShoppingCart {
-    private get container() {
+    private get container(): WebdriverIO.Element {
         return $('#box-checkout-cart')
     }
 
-    public get items() {
+    public get items(): Item[] {
         return $$('table.items tr.item').map(item => {
             return new Item(item)
         })
+    }
+
+    public getItemByName(name: string): Item {
+        return this.items.find(item => item.getProductName().includes(name))
     }
 
 }
@@ -50,11 +54,11 @@ class Item {
         this.container = itemContainer
     }
 
-    public getProductName() {
+    public getProductName(): string {
         return this.container.getAttribute('data-name')
     }
 
-    public getProductPrice() {
+    public getProductPrice(): number {
         return parseFloat(this.container.getAttribute('data-price'))
     }
     

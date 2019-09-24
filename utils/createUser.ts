@@ -1,5 +1,5 @@
-import * as request from "request-promise-native";
-import * as faker from "faker";
+const request = require("request-promise-native");
+const faker = require("faker");
 const cheerio = require("cheerio");
 
 async function createNewUserAsync() {

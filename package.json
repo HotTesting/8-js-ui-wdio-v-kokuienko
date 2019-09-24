@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Demostration project for StartIT webdriverio functional automation group #8",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio ./run.js"
   },
   "repository": {
     "type": "git",

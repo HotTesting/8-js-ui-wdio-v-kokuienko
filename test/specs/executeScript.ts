@@ -138,27 +138,22 @@ describe('WDIO', function () {
 
 
     it("js click command", function () {
-        browser.addCommand("jsClick", function (selector) {
-            browser.execute(function (_selector) {
+        browser.addCommand("jsClick", function () {
+            browser.execute(function (el) {
                 // @ts-ignore
-                document.querySelector(_selector).click();
-            }, selector);
-        });
+                el.click();
+            }, this);
+        }, true);
 
-        // @ts-ignore
-        browser.jsClick("div.button");
+        // browser.addCommand("jsClick", function (selector) {
+        //     browser.execute(function (_selector) {
+        //         // @ts-ignore
+        //         document.querySelector(_selector).click();
+        //     }, selector);
+        // });
+
+        $('div').jsClick("div.button");
+
     });
 
-    it.only("Multiremote", function () {
-        // executed in all multiremote browsers
-        browser.url("https://socketio-chat-example.now.sh/");
-        user1.pause(1000);
-        user2.pause(1000);
-        user1.$("input#m").setValue("Hello world!");
-        user1.$("button=Send").click();
-        user2.$("input#m").setValue("Hello world! 2");
-        user2.$("button=Send").click();
-        browser.pause(10000);
-        console.log("Messages", $("ul#messages").getText());
-    });
-})
+});
