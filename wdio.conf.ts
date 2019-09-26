@@ -1,5 +1,3 @@
-
-
 const SUT_URL = process.env.SUT_URL || "http://ip-5236.sunline.net.ua:38015/";
 console.log("GOT BASE URL", SUT_URL);
 
@@ -9,18 +7,18 @@ const wdioConfig = {
     // hostname: 'ip-5236.sunline.net.ua',
     // port: 4444,
     path: "/",
-    specs: ["./test/specs/**/*.ts"],
+    specs: ["./test/specs/cart.ts"],
     maxInstances: 2,
     capabilities: [{
         browserName: 'chrome',
         "selenoid:options": {
             enableVNC: true
         }
-    }, {
-        browserName: 'firefox',
-        "selenoid:options": {
-            enableVNC: true
-        }
+    // }, {
+    //     browserName: 'firefox',
+    //     "selenoid:options": {
+    //         enableVNC: true
+    //     }
     }],
 
     // MULTIREMOTE
@@ -43,7 +41,12 @@ const wdioConfig = {
     connectionRetryCount: 3,
     services: ["chromedriver"],
     framework: "mocha",
-    reporters: ["spec"],
+    reporters: [
+        "spec", 
+        ['allure', {
+            outputDir: 'allure-results'
+        }]
+    ],
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
@@ -52,13 +55,13 @@ const wdioConfig = {
         // retries: 5
         // grep: '@SMOKE'
     },
-    beforeSession: function(config, capabilities) {
+    beforeSession: function (config, capabilities) {
         if (process.env.DEBUG == "1") {
             // Giving debugger some time to connect...
             return new Promise(resolve => setTimeout(resolve, 10000));
         }
     },
-    before: function(capabilities, specs) {
+    before: function (capabilities, specs) {
         browser.setWindowSize(1920, 1080);
     }
 };
