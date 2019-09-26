@@ -4,9 +4,9 @@ console.log("GOT BASE URL", SUT_URL);
 const wdioConfig = {
     runner: "local",
     // Where selenium standalone or chrome driver started
-    // hostname: 'ip-5236.sunline.net.ua',
+    hostname: 'ip-5236.sunline.net.ua',
     // port: 4444,
-    path: "/",
+    path: "/wd/hub",
     specs: ["./test/specs/cart.ts"],
     maxInstances: 2,
     capabilities: [{
@@ -39,7 +39,7 @@ const wdioConfig = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    services: ["chromedriver"],
+    // services: ["chromedriver"],
     framework: "mocha",
     reporters: [
         "spec", 
