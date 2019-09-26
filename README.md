@@ -2,4 +2,3 @@
 
 Initial seed project for students.
 
-test
