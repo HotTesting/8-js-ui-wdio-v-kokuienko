@@ -25,7 +25,6 @@
     "@wdio/spec-reporter": "^5.12.1",
     "@wdio/allure-reporter": "^5.13.2",
     "@wdio/sync": "^5.12.3",
-    "chromedriver": "^76.0.0",
     "wdio-chromedriver-service": "^5.0.2",
     "typescript": "3.6.2",
     "ts-node": "8.3.0",

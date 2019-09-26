@@ -1,10 +1,11 @@
+const SELENIUM_HOST = process.env.SELENIUM_HOST || "ip-5236.sunline.net.ua";
 const SUT_URL = process.env.SUT_URL || "http://ip-5236.sunline.net.ua:38015/";
 console.log("GOT BASE URL", SUT_URL);
 
 const wdioConfig = {
     runner: "local",
     // Where selenium standalone or chrome driver started
-    hostname: 'ip-5236.sunline.net.ua',
+    hostname: SELENIUM_HOST,
     // port: 4444,
     path: "/wd/hub",
     specs: ["./test/specs/cart.ts"],
